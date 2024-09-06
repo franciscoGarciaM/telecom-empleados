@@ -8,8 +8,7 @@ import java.util.UUID;
 @Table(name = "empleado_cuadrilla")
 public class EmpleadoCuadrilla {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "empleado_cuadrilla_id_gen")
-    @SequenceGenerator(name = "empleado_cuadrilla_id_gen", sequenceName = "empleado_cuadrilla_id_empleado_cuadrilla_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_empleado_cuadrilla", nullable = false)
     private Integer id;
 

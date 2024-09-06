@@ -1,6 +1,5 @@
 package com.telecom.empleado.repository;
 
-
 import com.telecom.empleado.model.Rol;
 import org.springframework.data.jpa.repository.JpaRepository;
 
