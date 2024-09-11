@@ -6,6 +6,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class EmpleadoRequest {
 
@@ -37,6 +38,19 @@ public class EmpleadoRequest {
     @NotBlank(message = "La contraseña es obligatoria")
     @Size(min = 8, message = "La contraseña debe tener al menos 8 caracteres")
     private String password;
+
+
+    @NotBlank(message = "El e-mail es obligatoria")
+    @Size(min = 8, message = "El email debe tener al menos 8 caracteres")
+    private String email;
+
+    @NotBlank(message = "El telefono es obligatoria")
+    @Size(min = 8, message = "El telefono debe tener al menos 10 caracteres")
+    private String celular;
+
+    private Long idRol;
+
+    private UUID uuid;
 
     // Getters y Setters
 
@@ -102,5 +116,38 @@ public class EmpleadoRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public Long getIdRol() {
+        return idRol;
+    }
+
+    public void setIdRol(Long idRol) {
+        this.idRol = idRol;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
     }
 }

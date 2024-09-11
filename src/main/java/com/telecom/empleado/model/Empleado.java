@@ -62,8 +62,20 @@ public class Empleado {
     @Column(name = "fecha_modificacion", length = Integer.MAX_VALUE)
     private String fechaModificacion;
 
-    @OneToMany(mappedBy = "idEmpleado")
+    @OneToMany(mappedBy = "empleado")
     private Set<EmpleadoCuadrilla> empleadoCuadrillas = new LinkedHashSet<>();
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_rol")
+    private Rol rol;
 
     public Set<EmpleadoCuadrilla> getEmpleadoCuadrillas() {
         return empleadoCuadrillas;

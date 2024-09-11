@@ -1,5 +1,6 @@
 package com.telecom.empleado.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.LinkedHashSet;
@@ -20,7 +21,8 @@ public class Cuadrilla {
     @Column(name = "uuid")
     private UUID uuid;
 
-    @OneToMany(mappedBy = "idCuadrilla")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "cuadrilla", cascade = CascadeType.ALL)
     private Set<EmpleadoCuadrilla> empleadoCuadrillas = new LinkedHashSet<>();
 
     public Integer getId() {

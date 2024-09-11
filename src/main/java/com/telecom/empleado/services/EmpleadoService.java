@@ -2,6 +2,7 @@ package com.telecom.empleado.services;
 
 import com.telecom.empleado.exception.ResourceNotFoundException;
 import com.telecom.empleado.model.Empleado;
+import com.telecom.empleado.model.Rol;
 import com.telecom.empleado.repository.EmpleadoRepository;
 import com.telecom.empleado.request.EmpleadoRequest;
 import com.empleado.response.EmpleadoResponse;
@@ -60,6 +61,12 @@ public class EmpleadoService {
         empleado.setIndActivo(empleadoRequest.getIndActivo());
         empleado.setNomEmpleado(empleadoRequest.getNomEmpleado());
         empleado.setPassword(empleadoRequest.getPassword());
+        empleado.setEmail(empleadoRequest.getEmail());
+        empleado.setCelular(empleadoRequest.getCelular());
+        Rol rol = new Rol();
+        rol.setIdRol(empleadoRequest.getIdRol());
+        empleado.setRol(rol);
+
 
         final Empleado updatedEmpleado = empleadoRepository.save(empleado);
         return mappingEntityToResponse(updatedEmpleado);

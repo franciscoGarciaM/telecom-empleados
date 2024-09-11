@@ -1,5 +1,6 @@
 package com.telecom.empleado.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -15,13 +16,15 @@ public class EmpleadoCuadrilla {
     @Column(name = "uuid")
     private UUID uuid;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_cuadrilla", nullable = false)
-    private Cuadrilla idCuadrilla;
+    private Cuadrilla cuadrilla;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_empleado", nullable = false)
-    private Empleado idEmpleado;
+    private Empleado empleado;
 
     public Integer getId() {
         return id;
@@ -39,20 +42,20 @@ public class EmpleadoCuadrilla {
         this.uuid = uuid;
     }
 
-    public Cuadrilla getIdCuadrilla() {
-        return idCuadrilla;
+    public Cuadrilla getCuadrilla() {
+        return cuadrilla;
     }
 
-    public void setIdCuadrilla(Cuadrilla idCuadrilla) {
-        this.idCuadrilla = idCuadrilla;
+    public void setCuadrilla(Cuadrilla idCuadrilla) {
+        this.cuadrilla = idCuadrilla;
     }
 
-    public Empleado getIdEmpleado() {
-        return idEmpleado;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setIdEmpleado(Empleado idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setEmpleado(Empleado idEmpleado) {
+        this.empleado = idEmpleado;
     }
 
 }

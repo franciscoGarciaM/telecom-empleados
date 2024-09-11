@@ -33,5 +33,24 @@ public class Rol {
         this.puesto = puesto;
     }
 
+    public Long getIdRol() {
+        return idRol;
+    }
+
+    public void setIdRol(Long idRol) {
+        this.idRol = idRol;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public Rol() {
+    }
+
     // Otros getters y setters (para uuid, idRol, etc.)
 }
